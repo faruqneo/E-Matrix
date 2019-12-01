@@ -4,7 +4,7 @@ const morgan = require('morgan');
 
 //PORT assign
 const PORT = process.env.PORT || 3000;
-const message = `Server is running on PORT:${PORT}`;
+const message = `Server is running on PORT:${PORT}.`;
 
 //Init app
 const app = express();
