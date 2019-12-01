@@ -29,6 +29,7 @@ You need to design a proper data model and create API’s to
 4. Get all the categories with its child categories mapped to it
 5. Get all the products by a category
 6. Update product details (name, price, etc.)
+
 Note: A Supervisor can’t add a category and an Admin can’t add a
 product.
 
