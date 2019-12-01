@@ -35,6 +35,3 @@ product.
 Stack: Node.JS, Express.JS, MongoDB/MySQL' 
 
 Time frame: 3 Days. 
-
-Source code sharing: Please share it on any public GIT repository
-and if possible please share postman collection as well.
