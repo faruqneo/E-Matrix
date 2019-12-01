@@ -1,6 +1,6 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const morgan = require('morgan');
+require('./db/db');
 
 //PORT assign
 const PORT = process.env.PORT || 3000;
@@ -29,8 +29,4 @@ app.get('/test', (req, res) => res.send(message));
 app.all('*', (req, res) => res.send(`Access denied`));
 
 //System Listen
-mongoose
-    .connect('mongodb://localhost/e-matrix', {useNewUrlParser: true, useUnifiedTopology: true})
-    .then(() => app.listen(PORT, () => console.log(`${message}\nConnted with mongoDB.`)))
-    .catch(() => console.log(`Unable to connect with db.`))
-
+app.listen(PORT, () => console.log(`${message}`))

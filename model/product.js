@@ -12,16 +12,12 @@ const productSchema = mongoose.Schema({
   description: {
     type: String,
     required: true
-  },
-  imageUrl: {
-    type: String,
-    required: true
-  },
-  categoryId: {
+  }, 
+  categoryId: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Category',
     //required: true
-  }
+  }]
 });
 
 module.exports = Product = mongoose.model('Product', productSchema);
