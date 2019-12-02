@@ -56,12 +56,12 @@ const updateProduct = async(req, res) => {
         const user = await User.findOne({ _id: data._id, 'tokens.token': token });
 
 
-        const {name} = req.body;
+        const {title} = req.body;
 
 
         if(user.role === 'Supervisor'){
 
-            await Product.updateOne({name}, req.body)
+            await Product.updateOne({title}, req.body)
             res.send("product has been updated")
         }
 
@@ -85,12 +85,12 @@ const deleteProduct = async(req, res) => {
         const user = await User.findOne({ _id: data._id, 'tokens.token': token });
 
 
-        const {name} = req.body;
+        const {title} = req.body;
 
 
         if(user.role === 'Supervisor'){
 
-            await Product.remove({name})
+            await Product.deleteOne({title})
             res.send("product has been removed")
         }
 

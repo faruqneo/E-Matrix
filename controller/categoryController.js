@@ -57,12 +57,12 @@ const updateCategory = async(req, res) => {
         const user = await User.findOne({ _id: data._id, 'tokens.token': token });
 
 
-        const {name} = req.body;
+        const {title} = req.body;
 
 
         if(user.role === 'Admin'){
 
-            await Category.updateOne({name}, req.body)
+            await Category.updateOne({title}, req.body)
             res.send("category has been updated")
         }
 
@@ -86,12 +86,12 @@ const deleteCategory = async(req, res) => {
         const user = await User.findOne({ _id: data._id, 'tokens.token': token });
 
 
-        const {name} = req.body;
+        const {title} = req.body;
 
 
         if(user.role === 'Admin'){
 
-            await Category.remove({name})
+            await Category.deleteOne({title})
             res.send("category has been removed")
         }
 
